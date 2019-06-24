@@ -9,7 +9,6 @@ open class BaseActivity : AppCompatActivity() {
     val tag = "lifecycle"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base)
         Log.d(tag,"${javaClass.simpleName}: onCreate")
     }
 

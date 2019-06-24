@@ -13,4 +13,13 @@
     </string>
     <string name="get_started">Get started</string>
     <string name="sec_page_background">sec_page_background</string>
+    <string name="background_image">background_image</string>
+    <string name="i_am">I am :</string>
+    <string name="finish">Finish</string>
+    <string name="beginner">Beginner</string>
+    <!--<string name="beginner">Beginner</string>-->
+    <!--<string name="beginner">Beginner</string>-->
+    <!--<string name="baller">Baller</string>-->
+    <string name="baller">Baller</string>
+    <string name="balder">Balder</string>
 </resources>

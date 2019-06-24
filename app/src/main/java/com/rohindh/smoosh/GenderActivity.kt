@@ -1,7 +1,9 @@
 package com.rohindh.smoosh
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+//import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class GenderActivity : BaseActivity() {
 
@@ -9,4 +11,8 @@ class GenderActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gender)
     }
+     fun leagueNextClicked(view: View){
+         val nextleague = Intent(this, SkillActivity::class.java)
+         startActivity(nextleague)
+     }
 }
