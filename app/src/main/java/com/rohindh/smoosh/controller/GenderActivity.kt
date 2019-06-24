@@ -11,26 +11,45 @@ import com.rohindh.smoosh.utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_gender.*
 
 class GenderActivity : BaseActivity() {
+
     var player = Player("","")
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER, player)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gender)
     }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        player = savedInstanceState.getParcelable(EXTRA_PLAYER)!!
+
+    }
+
+
+
     fun onMensClicked(view: View){
         womensBtn.isChecked = false
         coedBtn.isChecked = false
         player.league = "mens"
     }
+
     fun onWomensClicked(view: View) {
         mensBtn.isChecked = false
         coedBtn.isChecked = false
         player.league = "womens"
     }
+
     fun onCoedClicked(view: View){
         womensBtn.isChecked=false
         mensBtn.isChecked = false
         player.league = "co-ed"
     }
+
      fun leagueNextClicked(view: View){
          if (player.league !="")
          {

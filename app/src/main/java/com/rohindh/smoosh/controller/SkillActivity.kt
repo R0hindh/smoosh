@@ -10,7 +10,7 @@ import com.rohindh.smoosh.utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_skill.*
 
 //@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-open class SkillActivity : BaseActivity() {
+class SkillActivity : BaseActivity() {
     lateinit var player :Player
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
