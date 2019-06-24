@@ -9,13 +9,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SkillActivity">
+        <activity android:name=".controller.LastActivity">
         </activity>
-        <activity android:name=".BaseActivity">
+        <activity android:name=".controller.Main2Activity">
         </activity>
-        <activity android:name=".GenderActivity">
+        <activity android:name=".controller.FinishActivity">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".controller.SkillActivity">
+        </activity>
+        <activity android:name=".controller.BaseActivity">
+        </activity>
+        <activity android:name=".controller.GenderActivity">
+        </activity>
+        <activity android:name=".controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

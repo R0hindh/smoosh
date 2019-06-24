@@ -1,14 +1,16 @@
-package com.rohindh.smoosh
+package com.rohindh.smoosh.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.rohindh.smoosh.R
 
 open class BaseActivity : AppCompatActivity() {
 
     val tag = "lifecycle"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_base)
         Log.d(tag,"${javaClass.simpleName}: onCreate")
     }
 

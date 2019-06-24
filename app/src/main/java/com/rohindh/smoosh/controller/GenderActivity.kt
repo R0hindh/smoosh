@@ -1,10 +1,12 @@
-package com.rohindh.smoosh
+package com.rohindh.smoosh.controller
 
 import android.content.Intent
 //import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.rohindh.smoosh.utilities.EXTRA_DATA
+import com.rohindh.smoosh.R
 import kotlinx.android.synthetic.main.activity_gender.*
 
 class GenderActivity : BaseActivity() {
