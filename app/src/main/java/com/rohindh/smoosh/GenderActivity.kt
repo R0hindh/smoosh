@@ -3,7 +3,7 @@ package com.rohindh.smoosh
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class GenderActivity : AppCompatActivity() {
+class GenderActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
