@@ -4,33 +4,32 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.rohindh.smoosh.utilities.EXTRA_DATA
 import com.rohindh.smoosh.R
-import com.rohindh.smoosh.utilities.EXTRA_SKILL
+import com.rohindh.smoosh.model.Player
+import com.rohindh.smoosh.utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_skill.*
 
+//@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 open class SkillActivity : BaseActivity() {
-    var league:String? = ""
-    var skill = ""
+    lateinit var player :Player
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
-        league = intent.getStringExtra(EXTRA_DATA)
-        Toast.makeText(this,"$league league is available",Toast.LENGTH_SHORT).show()
+        player = intent.getParcelableExtra(EXTRA_PLAYER)
+        Toast.makeText(this,"${player.league} league is available",Toast.LENGTH_SHORT).show()
     }
     fun beginnerClicked(view: View){
         ballerBtn.isChecked = false
-        skill = "beginner"
+        player.skill= "beginner"
     }
     fun ballerClicked(view: View){
         beginnerBtn.isChecked = false
-        skill = "baller"
+        player.skill = "baller"
     }
     fun onFinishClicked(view: View) {
-        if (skill != ""){
+        if (player.skill != ""){
             val finishactivity = Intent(this,LastActivity::class.java)
-            finishactivity.putExtra(EXTRA_DATA,league)
-            finishactivity.putExtra(EXTRA_SKILL,skill)
+            finishactivity.putExtra(EXTRA_PLAYER,player)
             startActivity(finishactivity)
         }else {
             Toast.makeText(this,"please select your skill",Toast.LENGTH_SHORT).show()

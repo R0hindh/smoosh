@@ -5,12 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.rohindh.smoosh.utilities.EXTRA_DATA
 import com.rohindh.smoosh.R
+import com.rohindh.smoosh.model.Player
+import com.rohindh.smoosh.utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_gender.*
 
 class GenderActivity : BaseActivity() {
-    var selectedleague = ""
+    var player = Player("","")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gender)
@@ -18,23 +19,23 @@ class GenderActivity : BaseActivity() {
     fun onMensClicked(view: View){
         womensBtn.isChecked = false
         coedBtn.isChecked = false
-        selectedleague = "mens"
+        player.league = "mens"
     }
     fun onWomensClicked(view: View) {
         mensBtn.isChecked = false
         coedBtn.isChecked = false
-        selectedleague = "womens"
+        player.league = "womens"
     }
     fun onCoedClicked(view: View){
         womensBtn.isChecked=false
         mensBtn.isChecked = false
-        selectedleague = "co-ed"
+        player.league = "co-ed"
     }
      fun leagueNextClicked(view: View){
-         if (selectedleague !="")
+         if (player.league !="")
          {
              val nextleague = Intent(this, SkillActivity::class.java)
-             nextleague.putExtra(EXTRA_DATA,selectedleague)
+             nextleague.putExtra(EXTRA_PLAYER,player)
              startActivity(nextleague)
          }else{
              Toast.makeText(this,"please select a league",Toast.LENGTH_SHORT).show()
